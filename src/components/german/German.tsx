@@ -96,10 +96,12 @@ const German: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="text-[28px] leading-[60px] font-semibold text-[#022850] sm:text-[32px] md:text-[48px]">
-              French Classes Online 
- <br /> With Certified Trainers
-            </h1>
+           <h1 className="text-[28px] leading-[36px] sm:leading-[48px] md:leading-[60px] font-semibold text-[#022850] sm:text-[32px] md:text-[48px]">
+  French Classes Online
+  <br />
+  With Certified Trainers
+</h1>
+
             <p className="text-[22px] leading-[27px] font-semibold text-[#022850] py-4 " >
               {content.subtitle}
             </p>
@@ -131,35 +133,47 @@ const German: React.FC = () => {
 <div className="mt-6 grid gap-2 grid-cols-2 justify-start items-start">
   {/* First Column - Left Bullets */}
   <ul className="space-y-2" style={{ color: COLORS.body }}>
-    <li className="justify-start items-center flex gap-3 md:text-[14px] text-[12px]">
-      <RingCheck />
-      <p><span className="font-semibold">Speak French confidently  
+    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+      <span className="mt-[2px] flex-shrink-0">
+    <RingCheck />
+  </span>
+      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Speak French confidently  
 </span> with live,instructor-led classes</p>
     </li>
-    <li className="justify-start items-center flex gap-3 md:text-[14px] text-[12px]">
-      <RingCheck />
-      <p><span className="font-semibold">Structured learning </span> path from beginner to advanced levels</p>
+    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+      <span className="mt-[2px] flex-shrink-0">
+    <RingCheck />
+  </span>
+      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Structured learning </span> path from beginner to advanced levels</p>
     </li>
-    <li className="justify-start items-center flex gap-3 md:text-[14px] text-[12px]">
-      <RingCheck />
-      <p><span className="font-semibold">Dedicated preparation </span> for DELF, TEF, and TCF exams</p>
+    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+       <span className="mt-[2px] flex-shrink-0">
+    <RingCheck />
+  </span>
+      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Dedicated preparation </span> for DELF, TEF, and TCF exams</p>
     </li>
   </ul>
   
   {/* Second Column - Right Bullets */}
   <ul className="space-y-2" style={{ color: COLORS.body }}>
-    <li className="justify-start items-center flex gap-3 md:text-[14px] text-[12px]">
-      <RingCheck />
-      <p><span className="font-semibold">Personalised feedback </span> on speaking and writing in every phase</p>
+    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+      <span className="mt-[2px] flex-shrink-0">
+    <RingCheck />
+  </span>
+      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Personalised feedback </span> on speaking and writing in every phase</p>
     </li>
-    <li className="justify-start items-center flex gap-3 md:text-[14px] text-[12px]">
-      <RingCheck />
-      <p>Flexible weekday and
+    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+      <span className="mt-[2px] flex-shrink-0">
+    <RingCheck />
+  </span>
+      <p className="leading-snug ml-[-2px]">Flexible weekday and
 <span className="font-semibold"> weekend batches for working </span> professionals</p>
     </li>
-    <li className="justify-start items-center flex gap-3 md:text-[14px] text-[12px]">
-      <RingCheck />
-      <p><span className="font-semibold">Real exam-style 
+    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+      <span className="mt-[2px] flex-shrink-0">
+    <RingCheck />
+  </span>
+      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Real exam-style 
 </span> mock tests and performance tracking</p>
     </li>
   </ul>

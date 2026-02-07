@@ -57,65 +57,64 @@ const WhyTakeExam: React.FC = () => {
 
             {/* Points */}
             <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 md:grid-cols-1">
-             <li className="flex items-start gap-3">
-  <span className="mt-0.5 shrink-0">
-    <RingCheck color={UI.success} />
-  </span>
-  <p className={`${type.item}`} style={{ color: UI.secondary }}>
-    <span className="font-semibold">
-      Learn through live online classes with flexibility
-    </span>
-  </p>
-</li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 shrink-0">
+                  <RingCheck color={UI.success} />
+                </span>
+                <p className={`${type.item}`} style={{ color: UI.secondary }}>
+                  <span className="font-semibold">
+                    Learn through live online classes with flexibility
+                  </span>
+                </p>
+              </li>
 
-<li className="flex items-start gap-3">
-  <span className="mt-0.5 shrink-0">
-    <RingCheck color={UI.success} />
-  </span>
-  <p className={`${type.item}`} style={{ color: UI.secondary }}>
-    <span className="font-semibold">
-      Build a lifelong language skill with real value
-    </span>
-  </p>
-</li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 shrink-0">
+                  <RingCheck color={UI.success} />
+                </span>
+                <p className={`${type.item}`} style={{ color: UI.secondary }}>
+                  <span className="font-semibold">
+                    Build a lifelong language skill with real value
+                  </span>
+                </p>
+              </li>
 
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0">
-                    <RingCheck color={UI.success} />
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 shrink-0">
+                  <RingCheck color={UI.success} />
+                </span>
+                <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
+                  <span className='font-semibold'>Unlock global career and study opportunities
                   </span>
-                  <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
-                    <span className='font-semibold'>Unlock global career and study opportunities
-</span> 
-                  </p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0">
-                    <RingCheck color={UI.success} />
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 shrink-0">
+                  <RingCheck color={UI.success} />
+                </span>
+                <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
+                  <span className='font-semibold'> Prepare effectively for DELF, TEF and TCF
                   </span>
-                  <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
-                    <span className='font-semibold'> Prepare effectively for DELF, TEF and TCF
-</span>
-                  </p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0">
-                    <RingCheck color={UI.success} />
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 shrink-0">
+                  <RingCheck color={UI.success} />
+                </span>
+                <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
+                  <span className='font-semibold'>Strengthen your PR and immigration profile</span>
+                </p>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 shrink-0">
+                  <RingCheck color={UI.success} />
+                </span>
+                <p className={type.item} style={{ color: UI.secondary }}>
+                  <span className="font-semibold">
+                    Learn through live online classes with flexibility
                   </span>
-                  <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
-                    <span className='font-semibold'>Strengthen your PR and immigration profile</span> 
-                  </p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0">
-                    <RingCheck color={UI.success} />
-                  </span>
-                  <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
-                    <span className='font-semibold'> Learn through live online classes with flexibility</span> 
-                  </p>
-                  <p className={`type.item whitespace-pre-line`} style={{ color: UI.secondary }}>
-                    <span className='font-semibold'> Build a lifelong language skill with real value</span> 
-                  </p>
-                </li>
+                </p>
+              </li>
             </ul>
 
 

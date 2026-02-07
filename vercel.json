@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/french-classes-online",
+      "permanent": true
+    }
+  ]
+}

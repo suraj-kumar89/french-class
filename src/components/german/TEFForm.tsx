@@ -114,10 +114,13 @@ const TEFForm: React.FC = () => {
 
   // --- Redundant simulation block removed, as countryCodeOptions is now
   // defined at the top of the file. ---
-  const MIN_WORDS = 30;
+  const MIN_CHARS = 30;
 
-  const wordCount = (form.learningNeeds?.trim()?.split(/\s+/).filter(Boolean).length) || 0;
-  const isTooShort = wordCount < MIN_WORDS;
+const charCount =
+  (form.learningNeeds?.trim().length) || 0;
+
+const isTooShort = charCount < MIN_CHARS;
+
   return (
     <div className="w-full md:w-[620px] md:pl-[40px]">
       <div className="mx-auto w/full max-w-[580px] rounded-2xl bg-[#F0EFF1] p-6 pt-16 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
@@ -205,9 +208,13 @@ const TEFForm: React.FC = () => {
             onChange={(e) => setField("learningNeeds", e.target.value)}
             required
           />
-          <div className="mt-1 text-xs text-[]">
-            {wordCount} words • {isTooShort ? `Please add ${MIN_WORDS - wordCount} more word(s).` : "Looks good"}
-          </div>
+         <div className="mt-1 text-xs">
+  {charCount} characters •{" "}
+  {isTooShort
+    ? `Please add ${MIN_CHARS - charCount} more character(s).`
+    : "Looks good"}
+</div>
+
 
 
           <label className="mt-2 flex items-start gap-2 text-sm" style={{ color: "#D1D0D6" }}>

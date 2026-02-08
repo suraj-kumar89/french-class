@@ -135,81 +135,62 @@ export function useTEF() {
 
   const hasError = useMemo(() => Object.keys(errors).length > 0, [errors]);
 
-
- const handleSubmit = useCallback(async () => {
-  setTouched({
-    fullName: true,
-    countryCode: true,
-    phone: true,
-    email: true,
-    goal: true,
-    frenchLevel: true,
-    startDate: true,
-    learningNeeds: true,
-    consent: true,
-    expertGuidance: true,
-  });
-
+const handleSubmit = useCallback(async () => {
   if (hasError) return;
-
   setLoading(true);
 
-  const [firstName, ...lastNameParts] = form.fullName.trim().split(" ");
-  const lastName = lastNameParts.join(" ") || "NA";
+  const [firstName, ...last] = form.fullName.trim().split(" ");
+  const lastName = last.join(" ") || "NA";
   const countryOnly = form.countryCode.split(" (")[0];
 
-  try {
-    const endpoint =
-      "https://api.hsforms.com/submissions/v3/integration/submit/245021836/b2cfa0dc-0f9c-48da-be2f-563620025a39";
+  const hutk =
+    document.cookie
+      .split("; ")
+      .find(row => row.startsWith("hubspotutk="))
+      ?.split("=")[1] || "";
 
-    const payload = {
-      fields: [
-        { name: "firstname", value: firstName },
-        { name: "lastname", value: lastName },
-        { name: "email", value: form.email },
-        { name: "phone", value: form.phone },
-        { name: "country", value: countryOnly },
+  const payload = {
+    fields: [
+      { name: "email", value: form.email },   // 👈 MUST BE FIRST
+      { name: "firstname", value: firstName },
+      { name: "lastname", value: lastName },
+      { name: "phone", value: form.phone },
+      { name: "country", value: countryOnly },
 
-        { name: "tef_goal", value: form.goal },
-        { name: "french_level", value: form.frenchLevel },
-        { name: "preferred_start_date", value: form.startDate },
-        { name: "message", value: form.learningNeeds },
+      { name: "tef_goal", value: form.goal },
+      { name: "french_level", value: form.frenchLevel },
+      { name: "preferred_start_date", value: form.startDate },
+      { name: "message", value: form.learningNeeds },
 
-        { name: "utm_source", value: utm.utm_source },
-        { name: "utm_medium", value: utm.utm_medium },
-        { name: "utm_campaign", value: utm.utm_campaign },
-        { name: "utm_term", value: utm.utm_term },
-      ],
-      context: {
-        pageUri: window.location.href,
-        pageName: document.title,
-      },
-    };
+      { name: "utm_source", value: utm.utm_source },
+      { name: "utm_medium", value: utm.utm_medium },
+      { name: "utm_campaign", value: utm.utm_campaign },
+      { name: "utm_term", value: utm.utm_term },
+    ],
+    context: {
+      hutk,
+      pageUri: window.location.href,
+      pageName: document.title,
+    },
+  };
 
-    const res = await fetch(endpoint, {
+  const res = await fetch(
+    "https://api.hsforms.com/submissions/v3/integration/submit/245021836/b2cfa0dc-0f9c-48da-be2f-563620025a39",
+    {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    });
-
-    if (!res.ok) {
-      const err = await res.json();
-      console.error("HubSpot API error:", err);
-      alert("Submission failed");
-      return;
     }
+  );
 
-    setTouched({});
-    navigate("/thank_you", { replace: true });
-  } catch (err) {
-    console.error("HubSpot submission error:", err);
-    alert("Submission failed");
-  } finally {
-    setLoading(false);
+  if (!res.ok) {
+    const err = await res.json();
+    console.error("HubSpot error:", err);
+    return;
   }
-}, [form, hasError, navigate, utm]);
 
-
+  navigate("/thank_you", { replace: true });
+}, [form, hasError, utm]);
 
 
 

@@ -185,7 +185,7 @@ const handleSubmit = useCallback(async () => {
     },
   };
 
-  const res = await fetch("/api/hubspot-submit", {
+  const res = await fetch(`${window.location.origin}/api/hubspot-submit`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(payload),

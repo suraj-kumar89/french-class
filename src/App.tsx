@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './Home';
 import Contact from './Contact';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -14,15 +14,10 @@ function App() {
       <PopUp />
 
       <Routes>
-        {/* Redirect root URL */}
-        <Route
-          path="/"
-          element={<Navigate to="/french-classes-online" replace />}
-        />
 
         {/* Main page */}
         <Route
-          path="/french-classes-online"
+          path="/"
           element={<Home />}
         />
 

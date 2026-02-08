@@ -190,7 +190,7 @@ const handleSubmit = useCallback(async () => {
   }
 
   navigate("/thank_you", { replace: true });
-}, [form, hasError, utm]);
+}, [form, hasError, utm,navigate]);
 
 
 

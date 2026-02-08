@@ -185,14 +185,12 @@ const handleSubmit = useCallback(async () => {
     },
   };
 
-  const res = await fetch(
-    "https://api.hsforms.com/submissions/v3/integration/submit/245021836/b2cfa0dc-0f9c-48da-be2f-563620025a39",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    }
-  );
+  const res = await fetch("/api/hubspot-submit", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(payload),
+});
+
 
   if (!res.ok) {
     const err = await res.json();

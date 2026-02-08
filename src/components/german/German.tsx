@@ -82,102 +82,102 @@ const German: React.FC = () => {
               <div className="bg-[#F0F6D0] inline-flex items-center gap-1 rounded-full px-3 py-1">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                    <circle opacity="0.25" cx="5" cy="5" r="5" fill="#6D7B19"/>
-                    <circle cx="5" cy="5" r="2" fill="#6D7B19"/>
+                    <circle opacity="0.25" cx="5" cy="5" r="5" fill="#6D7B19" />
+                    <circle cx="5" cy="5" r="2" fill="#6D7B19" />
                   </svg>
                 </span>
                 <span className="text-[12px] text-[#6D7B19] font-semibold ">New</span>
               </div>
               <span className="text-[14px] font-normal text-[#242325]">{content.badge}</span>
               <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M11.5833 14.1668L15.75 10.0002M15.75 10.0002L11.5833 5.8335M15.75 10.0002H3.25" stroke="#022850" stroke-width="1.2" stroke-miterlimit="10" stroke-linejoin="round"/>
-              </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M11.5833 14.1668L15.75 10.0002M15.75 10.0002L11.5833 5.8335M15.75 10.0002H3.25" stroke="#022850" stroke-width="1.2" stroke-miterlimit="10" stroke-linejoin="round" />
+                </svg>
               </span>
             </div>
 
-           <h1 className="text-[28px] leading-[36px] sm:leading-[48px] md:leading-[60px] font-semibold text-[#022850] sm:text-[32px] md:text-[48px]">
-  French Classes Online
-  <br />
-  With Certified Trainers
-</h1>
+            <h1 className="text-[28px] leading-[36px] sm:leading-[48px] md:leading-[60px] font-semibold text-[#022850] sm:text-[32px] md:text-[48px]">
+              French Classes Online
+              <br />
+              With Certified Trainers
+            </h1>
 
             <p className="text-[22px] leading-[27px] font-semibold text-[#022850] py-4 " >
               {content.subtitle}
             </p>
 
             <p className="mt-3 text-[#757279] text-[18px] leading-[27px] md:mt-4 md:max-w-xl" >
-             Join live French classes online led by certified tutors. <br/>Whether you’re learning French from scratch, <span className="text-[#757279] text-[18px] leading-[27px] font-semibold">preparing for DELF, TEF, or TCF, or learning French</span> for career or immigration goals, our structured classes help you progress with clarity and confidence.
+              Join live French classes online led by certified tutors. <br />Whether you’re learning French from scratch, <span className="text-[#757279] text-[18px] leading-[27px] font-semibold">preparing for DELF, TEF, or TCF, or learning French</span> for career or immigration goals, our structured classes help you progress with clarity and confidence.
             </p>
 
             <div className="mt-5 flex w-full flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
-             
+
 
               <a
                 href="#courses"
                 className="inline-flex h-12 w-full bg-[#D3E373] text-[#38400D] items-center justify-center rounded-xl border text-sm font-semibold sm:w-auto sm:px-6"
-                
+
               >
                 {content.ctas.book} <span className="ml-2">→</span>
               </a>
 
-               <a
+              <a
                 href="/contact_us"
                 className="inline-flex bg-transparent border-[#38400D] text-[#38400D] border-[1px] h-12 w-full items-center justify-center rounded-xl text-sm font-semibold sm:w-auto sm:px-6"
-                
+
               >
-                {content.ctas.explore} 
+                {content.ctas.explore}
               </a>
             </div>
 
-<div className="mt-6 grid gap-2 grid-cols-2 justify-start items-start">
-  {/* First Column - Left Bullets */}
-  <ul className="space-y-2" style={{ color: COLORS.body }}>
-    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
-      <span className="mt-[2px] flex-shrink-0">
-    <RingCheck />
-  </span>
-      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Speak French confidently  
-</span> with live,instructor-led classes</p>
-    </li>
-    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
-      <span className="mt-[2px] flex-shrink-0">
-    <RingCheck />
-  </span>
-      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Structured learning </span> path from beginner to advanced levels</p>
-    </li>
-    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
-       <span className="mt-[2px] flex-shrink-0">
-    <RingCheck />
-  </span>
-      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Dedicated preparation </span> for DELF, TEF, and TCF exams</p>
-    </li>
-  </ul>
-  
-  {/* Second Column - Right Bullets */}
-  <ul className="space-y-2" style={{ color: COLORS.body }}>
-    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
-      <span className="mt-[2px] flex-shrink-0">
-    <RingCheck />
-  </span>
-      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Personalised feedback </span> on speaking and writing in every phase</p>
-    </li>
-    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
-      <span className="mt-[2px] flex-shrink-0">
-    <RingCheck />
-  </span>
-      <p className="leading-snug ml-[-2px]">Flexible weekday and
-<span className="font-semibold"> weekend batches for working </span> professionals</p>
-    </li>
-    <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
-      <span className="mt-[2px] flex-shrink-0">
-    <RingCheck />
-  </span>
-      <p className="leading-snug ml-[-2px]"><span className="font-semibold">Real exam-style 
-</span> mock tests and performance tracking</p>
-    </li>
-  </ul>
-</div>
+            <div className="mt-6 grid gap-2 grid-cols-2 justify-start items-start">
+              {/* First Column - Left Bullets */}
+              <ul className="space-y-2" style={{ color: COLORS.body }}>
+                <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+                  <span className="mt-[2px] flex-shrink-0">
+                    <RingCheck />
+                  </span>
+                  <p className="leading-snug ml-[-2px]"><span className="font-semibold">Speak French confidently
+                  </span> with live,instructor-led classes</p>
+                </li>
+                <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+                  <span className="mt-[2px] flex-shrink-0">
+                    <RingCheck />
+                  </span>
+                  <p className="leading-snug ml-[-2px]"><span className="font-semibold">Structured learning </span> path from beginner to advanced levels</p>
+                </li>
+                <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+                  <span className="mt-[2px] flex-shrink-0">
+                    <RingCheck />
+                  </span>
+                  <p className="leading-snug ml-[-2px]"><span className="font-semibold">Dedicated preparation </span> for DELF, TEF, and TCF exams</p>
+                </li>
+              </ul>
+
+              {/* Second Column - Right Bullets */}
+              <ul className="space-y-2" style={{ color: COLORS.body }}>
+                <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+                  <span className="mt-[2px] flex-shrink-0">
+                    <RingCheck />
+                  </span>
+                  <p className="leading-snug ml-[-2px]"><span className="font-semibold">Personalised feedback </span> on speaking and writing in every phase</p>
+                </li>
+                <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+                  <span className="mt-[2px] flex-shrink-0">
+                    <RingCheck />
+                  </span>
+                  <p className="leading-snug ml-[-2px]">Flexible weekday and
+                    <span className="font-semibold"> weekend batches for working </span> professionals</p>
+                </li>
+                <li className="flex items-start md:items-center gap-3 md:text-[14px] text-[12px]">
+                  <span className="mt-[2px] flex-shrink-0">
+                    <RingCheck />
+                  </span>
+                  <p className="leading-snug ml-[-2px]"><span className="font-semibold">Real exam-style
+                  </span> mock tests and performance tracking</p>
+                </li>
+              </ul>
+            </div>
 
 
 

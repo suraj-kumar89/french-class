@@ -136,7 +136,7 @@ export function useTEF() {
   const hasError = useMemo(() => Object.keys(errors).length > 0, [errors]);
 
 
-  const handleSubmit = useCallback(async () => {
+ const handleSubmit = useCallback(async () => {
   setTouched({
     fullName: true,
     countryCode: true,
@@ -155,11 +155,12 @@ export function useTEF() {
   setLoading(true);
 
   const [firstName, ...lastNameParts] = form.fullName.trim().split(" ");
-  const lastName = lastNameParts.join(" ");
+  const lastName = lastNameParts.join(" ") || "NA";
   const countryOnly = form.countryCode.split(" (")[0];
 
   try {
-    const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/245021836/b2cfa0dc-0f9c-48da-be2f-563620025a39`;
+    const endpoint =
+      "https://api.hsforms.com/submissions/v3/integration/submit/245021836/b2cfa0dc-0f9c-48da-be2f-563620025a39";
 
     const payload = {
       fields: [
@@ -174,9 +175,6 @@ export function useTEF() {
         { name: "preferred_start_date", value: form.startDate },
         { name: "message", value: form.learningNeeds },
 
-        { name: "consent", value: form.consent ? "Yes" : "No" },
-        { name: "expert_guidance", value: form.expertGuidance ? "Yes" : "No" },
-
         { name: "utm_source", value: utm.utm_source },
         { name: "utm_medium", value: utm.utm_medium },
         { name: "utm_campaign", value: utm.utm_campaign },
@@ -190,16 +188,14 @@ export function useTEF() {
 
     const res = await fetch(endpoint, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
 
     if (!res.ok) {
-      const error = await res.json();
-      console.error("HubSpot API error:", error);
-      alert("Submission failed. Please try again.");
+      const err = await res.json();
+      console.error("HubSpot API error:", err);
+      alert("Submission failed");
       return;
     }
 
@@ -207,7 +203,7 @@ export function useTEF() {
     navigate("/thank_you", { replace: true });
   } catch (err) {
     console.error("HubSpot submission error:", err);
-    alert("Submission failed. Please try again.");
+    alert("Submission failed");
   } finally {
     setLoading(false);
   }

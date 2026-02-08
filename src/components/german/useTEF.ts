@@ -134,7 +134,6 @@ export function useTEF() {
   }, [form]);
 
   const hasError = useMemo(() => Object.keys(errors).length > 0, [errors]);
-
 const handleSubmit = useCallback(async () => {
   if (hasError) return;
   setLoading(true);
@@ -142,6 +141,9 @@ const handleSubmit = useCallback(async () => {
   const [firstName, ...last] = form.fullName.trim().split(" ");
   const lastName = last.join(" ") || "NA";
   const countryOnly = form.countryCode.split(" (")[0];
+
+  const callingCode = form.countryCode.match(/\+\d+/)?.[0] || "";
+  const fullPhone = `${callingCode}${form.phone}`;
 
   const hutk =
     document.cookie
@@ -151,10 +153,10 @@ const handleSubmit = useCallback(async () => {
 
   const payload = {
     fields: [
-      { name: "email", value: form.email },   // 👈 MUST BE FIRST
+      { name: "email", value: form.email },
       { name: "firstname", value: firstName },
       { name: "lastname", value: lastName },
-      { name: "phone", value: form.phone },
+      { name: "phone", value: fullPhone },
       { name: "country", value: countryOnly },
 
       { name: "tef_goal", value: form.goal },
@@ -167,10 +169,19 @@ const handleSubmit = useCallback(async () => {
       { name: "utm_campaign", value: utm.utm_campaign },
       { name: "utm_term", value: utm.utm_term },
     ],
+
     context: {
-      hutk,
+      hutk: hutk || undefined,
       pageUri: window.location.href,
       pageName: document.title,
+    },
+
+    legalConsentOptions: {
+      consent: {
+        consentToProcess: true,
+        text:
+          "I agree to allow this website to store and process my personal data.",
+      },
     },
   };
 
@@ -186,11 +197,12 @@ const handleSubmit = useCallback(async () => {
   if (!res.ok) {
     const err = await res.json();
     console.error("HubSpot error:", err);
+    setLoading(false);
     return;
   }
 
   navigate("/thank_you", { replace: true });
-}, [form, hasError, utm,navigate]);
+}, [form, hasError, utm, navigate]);
 
 
 

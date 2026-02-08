@@ -161,7 +161,11 @@ const handleSubmit = useCallback(async () => {
 
       { name: "tef_goal", value: form.goal },
       { name: "french_level", value: form.frenchLevel },
-      { name: "preferred_start_date", value: form.startDate },
+      {
+  name: "preferred_start_date",
+  value: new Date(form.startDate).getTime(),
+},
+
       { name: "message", value: form.learningNeeds },
 
       { name: "utm_source", value: utm.utm_source },

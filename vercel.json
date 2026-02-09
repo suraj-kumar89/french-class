@@ -1,14 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "destination": "/french-classes-online",
+      "source": "/french-classes-online",
+      "destination": "/",
       "permanent": false
     }
   ],
   "rewrites": [
     {
-      "source": "/french-classes-online/(.*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

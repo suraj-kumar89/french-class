@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/french-classes-online",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/french-classes-online/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

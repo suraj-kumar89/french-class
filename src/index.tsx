@@ -9,10 +9,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const basename =
-  process.env.NODE_ENV === "production"
-    ? "/french-classes-online"
-    : "/";
+const basename = "/french-classes-online";
+
 
 root.render(
   <React.StrictMode>

@@ -11,7 +11,6 @@ const root = ReactDOM.createRoot(
 
 const basename = "/french-classes-online";
 
-
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={basename}>

@@ -116,10 +116,10 @@ const TEFForm: React.FC = () => {
   // defined at the top of the file. ---
   const MIN_CHARS = 30;
 
-const charCount =
-  (form.learningNeeds?.trim().length) || 0;
+  const charCount =
+    (form.learningNeeds?.trim().length) || 0;
 
-const isTooShort = charCount < MIN_CHARS;
+  const isTooShort = charCount < MIN_CHARS;
 
   return (
     <div className="w-full md:w-[620px] md:pl-[40px]">
@@ -208,12 +208,12 @@ const isTooShort = charCount < MIN_CHARS;
             onChange={(e) => setField("learningNeeds", e.target.value)}
             required
           />
-         <div className="mt-1 text-xs">
-  {charCount} characters •{" "}
-  {isTooShort
-    ? `Please add ${MIN_CHARS - charCount} more character(s).`
-    : "Looks good"}
-</div>
+          <div className="mt-1 text-xs">
+            {charCount} characters •{" "}
+            {isTooShort
+              ? `Please add ${MIN_CHARS - charCount} more character(s).`
+              : "Looks good"}
+          </div>
 
 
 

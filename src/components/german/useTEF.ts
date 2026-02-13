@@ -13,8 +13,8 @@ export const COLORS = {
 };
 
 // Dropdown Options
-export const tefGoalOptions = ["Speaking French confidently", "DELF", "TEF (Canada PR)","TCF","Career or study abroad","Not sure yet"];
-export const frenchLevelOptions = ["Absolute beginner", "A1","A2","B1","B2 or Above","Not sure"];
+export const tefGoalOptions = ["Speaking French confidently", "DELF", "TEF (Canada PR)", "TCF", "Career or study abroad", "Not sure yet"];
+export const frenchLevelOptions = ["Absolute beginner", "A1", "A2", "B1", "B2 or Above", "Not sure"];
 
 /** ---- Static content (copy lives with the hook for easy edits) ---- */
 export const content = {
@@ -134,82 +134,82 @@ export function useTEF() {
   }, [form]);
 
   const hasError = useMemo(() => Object.keys(errors).length > 0, [errors]);
-const handleSubmit = useCallback(async () => {
-  if (hasError) return;
-  setLoading(true);
+  const handleSubmit = useCallback(async () => {
+    if (hasError) return;
+    setLoading(true);
 
-  const [firstName, ...last] = form.fullName.trim().split(" ");
-  const lastName = last.join(" ") || "NA";
-  const countryOnly = form.countryCode.split(" (")[0];
+    const [firstName, ...last] = form.fullName.trim().split(" ");
+    const lastName = last.join(" ") || "NA";
+    const countryOnly = form.countryCode.split(" (")[0];
 
-  const callingCode = form.countryCode.match(/\+\d+/)?.[0] || "";
-  const fullPhone = `${callingCode}${form.phone}`;
+    const callingCode = form.countryCode.match(/\+\d+/)?.[0] || "";
+    const fullPhone = `${callingCode}${form.phone}`;
 
-  const hutk =
-    document.cookie
-      .split("; ")
-      .find(row => row.startsWith("hubspotutk="))
-      ?.split("=")[1] || "";
+    const hutk =
+      document.cookie
+        .split("; ")
+        .find(row => row.startsWith("hubspotutk="))
+        ?.split("=")[1] || "";
 
-  const payload = {
-    fields: [
-      { name: "email", value: form.email },
-      { name: "firstname", value: firstName },
-      { name: "lastname", value: lastName },
-      { name: "phone", value: fullPhone },
-      { name: "country", value: countryOnly },
+    const payload = {
+      fields: [
+        { name: "email", value: form.email },
+        { name: "firstname", value: firstName },
+        { name: "lastname", value: lastName },
+        { name: "phone", value: fullPhone },
+        { name: "country", value: countryOnly },
 
-      { name: "tef_goal", value: form.goal },
-      { name: "french_level", value: form.frenchLevel },
-      {
-  name: "preferred_start_date",
-  value: new Date(form.startDate).getTime(),
-},
+        { name: "tef_goal", value: form.goal },
+        { name: "french_level", value: form.frenchLevel },
+        {
+          name: "preferred_start_date",
+          value: new Date(form.startDate).getTime(),
+        },
 
-      { name: "message", value: form.learningNeeds },
+        { name: "message", value: form.learningNeeds },
 
-      { name: "utm_source", value: utm.utm_source },
-      { name: "utm_medium", value: utm.utm_medium },
-      { name: "utm_campaign", value: utm.utm_campaign },
-      { name: "utm_term", value: utm.utm_term },
-    ],
+        { name: "utm_source", value: utm.utm_source },
+        { name: "utm_medium", value: utm.utm_medium },
+        { name: "utm_campaign", value: utm.utm_campaign },
+        { name: "utm_term", value: utm.utm_term },
+      ],
 
-    context: {
-      hutk: hutk || undefined,
-      pageUri: window.location.href,
-      pageName: document.title,
-    },
-
-    legalConsentOptions: {
-      consent: {
-        consentToProcess: true,
-        text:
-          "I agree to allow this website to store and process my personal data.",
+      context: {
+        hutk: hutk || undefined,
+        pageUri: window.location.href,
+        pageName: document.title,
       },
-    },
-  };
 
-  const res = await fetch(`${window.location.origin}/api/hubspot-submit`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload),
-});
+      legalConsentOptions: {
+        consent: {
+          consentToProcess: true,
+          text:
+            "I agree to allow this website to store and process my personal data.",
+        },
+      },
+    };
 
-
-  if (!res.ok) {
-    const err = await res.json();
-    console.error("HubSpot error:", err);
-    setLoading(false);
-    return;
-  }
-
-  navigate("/thank_you", { replace: true });
-}, [form, hasError, utm, navigate]);
+    const res = await fetch(`${window.location.origin}/api/hubspot-submit`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
 
+    if (!res.ok) {
+      const err = await res.json();
+      console.error("HubSpot error:", err);
+      setLoading(false);
+      return;
+    }
 
-// <script src="https://js-na2.hsforms.net/forms/embed/245021836.js" defer></script>
-// <div class="hs-form-frame" data-region="na2" data-form-id="b2cfa0dc-0f9c-48da-be2f-563620025a39" data-portal-id="245021836"></div>
+    navigate("/thank_you", { replace: true });
+  }, [form, hasError, utm, navigate]);
+
+
+
+  // <script src="https://js-na2.hsforms.net/forms/embed/245021836.js" defer></script>
+  // <div class="hs-form-frame" data-region="na2" data-form-id="b2cfa0dc-0f9c-48da-be2f-563620025a39" data-portal-id="245021836"></div>
 
   // const handleSubmit = useCallback(async () => {
   //   setTouched({
@@ -274,7 +274,7 @@ const handleSubmit = useCallback(async () => {
 
 
 
-  
+
   return {
     COLORS,
     content,

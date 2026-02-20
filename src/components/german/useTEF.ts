@@ -138,8 +138,6 @@ export function useTEF() {
     if (hasError) return;
     setLoading(true);
 
-    const [firstName, ...last] = form.fullName.trim().split(" ");
-    const lastName = last.join(" ") || "NA";
     const countryOnly = form.countryCode.split(" (")[0];
 
     const callingCode = form.countryCode.match(/\+\d+/)?.[0] || "";
@@ -154,8 +152,7 @@ export function useTEF() {
     const payload = {
       fields: [
         { name: "email", value: form.email },
-        { name: "firstname", value: firstName },
-        { name: "lastname", value: lastName },
+        { name: "firstname", value: form.fullName },
         { name: "phone", value: fullPhone },
         { name: "country", value: countryOnly },
 
@@ -205,75 +202,6 @@ export function useTEF() {
 
     navigate("/thank_you", { replace: true });
   }, [form, hasError, utm, navigate]);
-
-
-
-  // <script src="https://js-na2.hsforms.net/forms/embed/245021836.js" defer></script>
-  // <div class="hs-form-frame" data-region="na2" data-form-id="b2cfa0dc-0f9c-48da-be2f-563620025a39" data-portal-id="245021836"></div>
-
-  // const handleSubmit = useCallback(async () => {
-  //   setTouched({
-  //     fullName: true,
-  //     countryCode: true,
-  //     phone: true,
-  //     email: true,
-  //     goal: true,
-  //     frenchLevel: true,
-  //     startDate: true,
-  //     learningNeeds: true,
-  //     consent: true,
-  //     expertGuidance: true,
-  //   });
-
-  //   if (hasError) return;
-
-  //   try {
-  //     setLoading(true);
-
-  //     const payload = {
-  //       fullName: form.fullName,
-  //       countryCode: form.countryCode, // Send the country code here
-  //       phone: form.phone,
-  //       email: form.email,
-  //       goal: form.goal,
-  //       frenchLevel: form.frenchLevel,
-  //       startDate: form.startDate,
-  //       learningNeeds: form.learningNeeds,
-  //       consent: form.consent ? "true" : "false",
-  //       expertGuidance: form.expertGuidance ? "true" : "false",
-  //       // attach UTM params
-  //       ...utm,
-  //     };
-
-  //     console.log("Submitting payload with UTM:", payload);
-
-  //     const API_BASE_URL = "https://onlinefrenchskool.com";
-
-  //     const emailResponse = await fetch(`${API_BASE_URL}/api/submit`, {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(payload),
-  //     });
-
-  //     const emailJson = await emailResponse.json();
-
-  //     // Only navigate to the thank you page if the submission was successful
-  //     if (emailJson?.message === "Emails sent and data stored successfully") {
-  //       setTouched({});
-  //       navigate("/thank_you", { replace: true }); // Use replace to avoid history stack issue
-  //     } else {
-  //       alert(emailJson?.error || "Something went wrong. Please try again.");
-  //     }
-  //   } catch (err) {
-  //     console.error("Error submitting form:", err);
-  //     alert("Network error. Please try again.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }, [form, hasError, navigate, utm]);
-
-
-
 
   return {
     COLORS,

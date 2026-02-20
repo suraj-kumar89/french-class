@@ -243,15 +243,7 @@ const TEFForm: React.FC = () => {
           </label>
           {errors.expertGuidance && touched.expertGuidance && <p className="text-xs text-red-500">{errors.expertGuidance}</p>}
 
-        {/* Honeypot field (bot protection) */}
-<input
-  type="text"
-  name="website"
-  autoComplete="off"
-  style={{ display: "none" }}
-  value={form.website || ""}
-  onChange={(e) => setField("website", e.target.value)}
-/>
+
           <button
             onClick={handleSubmit}
             disabled={loading || isTooShort || !form.consent || !form.expertGuidance}

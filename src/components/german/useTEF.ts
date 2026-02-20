@@ -55,7 +55,6 @@ export type LeadForm = {
   learningNeeds: string;
   consent: boolean;
   expertGuidance: boolean;
-  website?: string; // honeypot field
 };
 
 const initial: LeadForm = {
@@ -69,7 +68,6 @@ const initial: LeadForm = {
   learningNeeds: "",
   consent: false,
   expertGuidance: false,
-  website: "",
 };
 
 export function useTEF() {
@@ -152,7 +150,6 @@ export function useTEF() {
         ?.split("=")[1] || "";
 
     const payload = {
-        website: form.website, 
       fields: [
         { name: "email", value: form.email },
         { name: "firstname", value: form.fullName },

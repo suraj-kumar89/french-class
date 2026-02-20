@@ -4,12 +4,27 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Get client IP address
+    const ip =
+      req.headers["x-forwarded-for"]?.split(",")[0] ||
+      req.socket?.remoteAddress ||
+      "";
+
+    // Clone incoming payload
+    const payload = req.body || {};
+
+    // Ensure context exists
+    payload.context = payload.context || {};
+
+    // Add IP address for HubSpot spam protection
+    payload.context.ipAddress = ip;
+
     const response = await fetch(
       "https://api.hsforms.com/submissions/v3/integration/submit/245021836/b2cfa0dc-0f9c-48da-be2f-563620025a39",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(req.body),
+        body: JSON.stringify(payload),
       }
     );
 

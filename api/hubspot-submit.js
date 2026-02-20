@@ -4,6 +4,10 @@ export default async function handler(req, res) {
   }
 
   try {
+
+     if (req.body.website) {
+    return res.status(400).json({ error: "Bot detected" });
+  }
     // Get client IP address
     const ip =
       req.headers["x-forwarded-for"]?.split(",")[0] ||

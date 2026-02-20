@@ -55,6 +55,7 @@ export type LeadForm = {
   learningNeeds: string;
   consent: boolean;
   expertGuidance: boolean;
+  website?: string; // honeypot field
 };
 
 const initial: LeadForm = {
@@ -68,6 +69,7 @@ const initial: LeadForm = {
   learningNeeds: "",
   consent: false,
   expertGuidance: false,
+  website: "",
 };
 
 export function useTEF() {

@@ -172,7 +172,7 @@ const TEFForm: React.FC = () => {
 
           <div className="grid grid-cols-2 gap-3">
             <Select // Goal with TEF
-              placeholder="Goal with TEF"
+              placeholder="Your Goal"
               value={form.goal}
               options={tefGoalOptions}
               onBlur={() => setTouched((t) => ({ ...t, goal: true }))}

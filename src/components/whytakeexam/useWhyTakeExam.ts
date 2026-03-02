@@ -38,7 +38,7 @@ export default function useWhyTakeExam() {
   ];
 
   const cta = {
-    label: 'Book Free Trial Class →',
+    label: 'Book Trial Class →',
     href: '/contact_us',
   };
 

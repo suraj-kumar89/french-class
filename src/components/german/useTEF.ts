@@ -25,8 +25,8 @@ export const content = {
     "Join live French classes online led by certified tutors.\n Whether you’re learning French from scratch, preparing for DELF, TEF, or TCF, or learning French for career or immigration goals, our structured classes help you progress with clarity and confidence.\n Experience interactive lessons, personalized feedback, and a supportive community to boost your French skills and achieve your language goals.",
   ctas: {
     explore: "Explore Courses",
-    book: "Book Free Trial Class",
-    submit: "Get Started for Free →",
+    book: "Book Trial Class",
+    submit: "Get Started →",
   },
   bulletsLeft: [
     "Personalised guidance for every student",

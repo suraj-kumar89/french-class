@@ -68,11 +68,11 @@ const PopUp: React.FC = () => {
           </div>
 
           <h2 className="text-[28px] md:text-[32px] font-bold text-gray-900 leading-snug">
-            Wait! Don’t Leave Without <br /> Trying a Free French Class
+            Wait! Don’t Leave Without <br /> Trying a French Class
           </h2>
 
           <p className="mt-4 text-gray-600 text-sm md:text-base">
-            Experience our teaching style with a free trial before you decide.
+            Experience our teaching style with a trial before you decide.
           </p>
 
           <button

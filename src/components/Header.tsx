@@ -20,7 +20,7 @@ const CloseIcon = ({ className = "" }) => (
 
 export default function Header({
   onCtaClick,
-  ctaLabel = "Book Free Trial Class",
+  ctaLabel = "Book Trial Class",
   ctaBg = "",
 }: HeaderProps) {
   const [open, setOpen] = React.useState(false);
@@ -173,7 +173,7 @@ export default function Header({
                 className="mb-3 inline-flex h-12 w-full items-center justify-center rounded-xl font-semibold text-white"
                 
               >
-                Book Free Trial Class 
+                Book Trial Class 
               </button>
               <a
                 href="#courses"

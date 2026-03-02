@@ -1,52 +1,5 @@
 import React from "react";
-// import { DatePicker } from "antd";            
-// import dayjs, { type Dayjs } from "dayjs";
 import GermanForm from "../german/TEFForm";
-// const avatars: string[] = [
-//   "https://media.onlinefrenchskool.com/Facebook.svg",
-//   "https://media.onlinefrenchskool.com/Instagram.svg",
-//   "https://media.onlinefrenchskool.com/LinkedIn.svg",
-//   "https://media.onlinefrenchskool.com/YouTube.svg",
-//   "https://media.onlinefrenchskool.com/Twitter.svg",
-// ];
-
-// const RingCheck: React.FC<{ color?: string }> = ({ color = "#3AA376" }) => (
-//   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-//     <circle cx="10" cy="10" r="8" stroke={color} strokeWidth="1.6" />
-//     <path d="M6.3 10.1l2.3 2.3L13.7 7.4" stroke={color} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-//   </svg>
-// );
-
-// const Bullet: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-//   <li className="flex items-start gap-2">
-//     <RingCheck />
-//     <span className="md:text-[15px] text-[13px] leading-6">{children}</span>
-//   </li>
-// );
-
-// const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement> & { error?: string }> = ({ error, ...props }) => (
-//   <div className="space-y-1">
-//     <input
-//       {...props}
-//       className={`w-full rounded-lg border bg-white px-3 py-3 text-sm outline-none transition placeholder:opacity-60 ${
-//         error ? "border-red-400" : "border-gray-200"
-//       } focus:border-gray-400`}
-//     />
-//     {error ? <p className="text-xs text-red-500">{error}</p> : null}
-//   </div>
-// );
-
-// const Textarea: React.FC<React.TextareaHTMLAttributes<HTMLTextAreaElement> & { error?: string }> = ({ error, ...props }) => (
-//   <div className="space-y-1">
-//     <textarea
-//       {...props}
-//       className={`w-full min-h-[84px] rounded-lg border bg-white px-3 py-3 text-sm outline-none transition placeholder:opacity-60 ${
-//         error ? "border-red-400" : "border-gray-200"
-//       } focus:border-gray-400`}
-//     />
-//     {error ? <p className="text-xs text-red-500">{error}</p> : null}
-//   </div>
-// );
 
 const ContactHero: React.FC = () => {
 

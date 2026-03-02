@@ -14,12 +14,12 @@ export default function useFreeClass() {
   };
 
   const content = {
-    badge: 'Free Trial Class',
-    titleLine1: 'Try a Free French Class ',
+    badge: 'Trial Class',
+    titleLine1: 'Try a French Class ',
     titleLine2: 'Before You Commit',
     subtitle:
-      'Book a free trial class and experience how our live, structured, and interactive French classes work. Get a feel for our teaching style, speaking practice, and personalised guidance before choosing the right learning path for you.',
-    cta: 'Book Free Trial Class',
+      'Book a trial class and experience how our live, structured, and interactive French classes work. Get a feel for our teaching style, speaking practice, and personalised guidance before choosing the right learning path for you.',
+    cta: 'Book Trial Class',
     image:
       'https://media.onlinefrenchskool.com/assets/freeoffer.svg', // replace with your asset
     imageAlt: 'Learner taking an online French trial class',

@@ -17,7 +17,7 @@ import WhyTakeExam from "./components/whytakeexam/WhyTakeExam";
 const Home: React.FC = () => {
   return (
     <div>
-      <SaleBanner endTime="2025-11-13T23:59:00+05:30" />
+      {/* <SaleBanner endTime="2025-11-13T23:59:00+05:30" /> */}
       <Header onCtaClick={() => window.location.assign("#book")} />
       <German/>
       <LearnGerman/>

@@ -202,7 +202,7 @@ const TEFForm: React.FC = () => {
             min={new Date().toISOString().split("T")[0]} // This ensures today's date is the minimum selectable date
           />
           <Textarea
-            placeholder="Message (min 30 words)"
+            placeholder="Message (min 30 characters)"
             value={form.learningNeeds}
             onBlur={() => setTouched((t) => ({ ...t, learningNeeds: true }))}
             onChange={(e) => setField("learningNeeds", e.target.value)}

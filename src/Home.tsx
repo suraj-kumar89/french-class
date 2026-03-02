@@ -1,5 +1,5 @@
 import React from "react";
-import SaleBanner from "./components/SaleBanner"; // adjust the path if different
+// import SaleBanner from "./components/SaleBanner"; // adjust the path if different
 import Header from "./components/Header";
 import German from "./components/german/German";
 import LearnGerman from "./components/learnfrench/LearnFrench";

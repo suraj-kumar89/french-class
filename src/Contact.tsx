@@ -1,5 +1,5 @@
 import React from "react";
-import SaleBanner from "./components/SaleBanner"; // adjust the path if different
+// import SaleBanner from "./components/SaleBanner"; // adjust the path if different
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FAQ from "./components/faq/FAQ";
@@ -10,7 +10,7 @@ import ContactHero from "./components/contact/ContactHero";
 const Home: React.FC = () => {
   return (
     <>
-        <SaleBanner endTime="2025-11-13T23:59:00+05:30"  />
+        {/* <SaleBanner endTime="2025-11-13T23:59:00+05:30"  /> */}
         <Header onCtaClick={() => window.location.assign("#book")} />
         <ContactHero/>
         <Journey />

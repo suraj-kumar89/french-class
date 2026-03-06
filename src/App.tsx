@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Home from './Home';
 import Contact from './Contact';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
+// import FloatingWhatsApp from './components/FloatingWhatsApp';
 // import PopUp from './components/PopUp';
 import ThankYouPage from './ThankYouPage';
 import PrivacyPolicy from './PrivacyPolicy';
@@ -26,7 +26,7 @@ function App() {
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/terms_and_conditions" element={<TermsAndConditions />} />
       </Routes>
-      <FloatingWhatsApp />
+      {/* <FloatingWhatsApp /> */}
     </>
   );
 }

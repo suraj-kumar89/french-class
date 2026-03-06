@@ -11,7 +11,7 @@ const ThankYouPage = () => {
 
       <Header />
 
-      <main className="flex flex-col items-center justify-center text-center w-full max-w-[1200px] px-6 lg:px-8 py-3 gap-3">
+     <main className="flex flex-col items-center justify-center text-center w-full max-w-[1200px] px-6 lg:px-8 py-4 gap-4">
 
         {/* Success Icon */}
         <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#A0D8B3]">
@@ -32,14 +32,14 @@ const ThankYouPage = () => {
         </div>
 
         {/* Blue Container */}
-        <div className="flex flex-col items-center gap-3 w-full max-w-[900px] p-6 md:p-8 rounded-[2rem] bg-[#E4F1FE]">
-
+      <div className="flex flex-col items-center gap-4 w-full max-w-[900px] p-4 md:p-7 rounded-[2rem] bg-[#E4F1FE]">
           {/* Headline */}
           <div className="flex flex-col gap-2">
             <h2 className="text-xl md:text-2xl font-semibold">
-              While you wait, experience a live French demo session for just ₹99
+               While you wait, experience a live <br />
+              French demo session for just ₹99
             </h2>
-
+            
             <p className="text-sm md:text-base text-[#333] max-w-[600px]">
               See how the classes work, interact with the trainer, and understand how quickly you can start speaking French.
             </p>
@@ -74,22 +74,7 @@ const ThankYouPage = () => {
                 course savings
               </p>
             </div>
-
           </div>
-
-          {/* Demo Benefits */}
-          <div className="text-left text-sm md:text-base text-[#333] max-w-[600px] space-y-2">
-            <p>• Experience how our live French classes are conducted</p>
-            <p>• Understand the learning roadmap from beginner to advanced</p>
-            <p>• Interact with the trainer and ask questions</p>
-            <p>• See if the course structure fits your learning goals</p>
-          </div>
-
-          {/* Urgency Line */}
-          <p className="text-sm text-red-600 font-semibold">
-            Limited seats available for this week's demo sessions.
-          </p>
-
           {/* CTA */}
           <a
             href="https://rzp.io/rzp/0iBhgVwy"

@@ -28,7 +28,7 @@ export default function Footer({
   };
 
   return (
-    <footer className="w-full bg-white">
+ <footer className="w-full bg-white flex items-center md:block min-h-screen md:min-h-0">
       <div className="mx-auto max-w-[1600px] px-7 md:px-[120px] py-12 md:py-16">
         {/* Top row: headline + CTA */}
         <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between">
@@ -81,47 +81,11 @@ export default function Footer({
   <path d="M39.4947 49.4226L11.5331 42.0738C9.98181 41.668 8.89943 40.2431 8.89943 38.6086V10.8479C8.89943 8.50061 11.0642 6.79254 13.289 7.37008L18.8931 8.84474V31.8864C18.8931 33.0905 19.4465 34.2337 20.3962 34.9584L38.833 49.0168C39.0496 49.1766 39.2662 49.3119 39.4947 49.4226Z" fill="#38B9F2"/>
   <path d="M44.8346 17.9016V46.2027C44.8346 46.3254 44.8346 46.4361 44.8228 46.5469C44.7389 48.2794 43.3798 49.6805 41.6839 49.7786C41.5637 49.7786 41.4554 49.7913 41.3352 49.7913C41.3115 49.7913 41.287 49.7913 41.2633 49.7786C40.9984 49.7786 40.7217 49.7415 40.4457 49.6679L39.4954 49.4219C39.2669 49.3111 39.0503 49.1759 38.8337 49.0161L20.3969 34.9577C19.4465 34.2323 18.8938 33.0898 18.8938 31.8857V3.84321C18.8938 0.685015 22.4058 -1.12117 24.8829 0.771224L43.3197 14.8296C44.27 15.5543 44.8353 16.6975 44.8353 17.9016H44.8346Z" fill="#4A3CF3"/>
 </svg>
-
-            {/* Copy */}
-            <p
-              className="mt-6 text-[15px] leading-6"
-              style={{ color: neutralSecondary, fontFamily: "Raveo Display, sans-serif" }}
-            >
-              Subscribe to stay up to date with the latest updates and feature releases.
-            </p>
-
-            {/* Newsletter input */}
-            <form onSubmit={submit} className="mt-4">
-              <div className="relative">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="e.g., username@email.com"
-                  className="w-full rounded-2xl border bg-white px-4 py-4 text-[15px] outline-none transition placeholder:opacity-50"
-                  style={{
-                    borderColor: divider,
-                    fontFamily: "Raveo Display, sans-serif",
-                    color: neutralPrimary,
-                  }}
-                />
-                <button 
-                  type="submit"
-                  className="absolute right-2 top-2 rounded-lg px-4 py-2 text-white font-semibold"
-                  style={{
-                    background: "#022850",
-                    fontFamily: "Raveo Display, sans-serif",
-                  }}
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form>
           </div>
 
+
           {/* Right navigation columns */}
-          <div className="md:col-span-5 grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[50px] md:ml-[-450px]">
             <nav>
               <div
                 className="mb-4 text-[16px] font-semibold"

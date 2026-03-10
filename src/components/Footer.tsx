@@ -21,12 +21,6 @@ export default function Footer({
 }: FooterProps) {
   const [email, setEmail] = useState("");
 
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSubscribe?.(email);
-    setEmail("");
-  };
-
   return (
  <footer className="w-full bg-white flex items-center md:block min-h-screen md:min-h-0">
       <div className="mx-auto max-w-[1600px] px-7 md:px-[120px] py-12 md:py-16">

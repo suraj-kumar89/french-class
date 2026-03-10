@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 type FooterProps = {
   onSubscribe?: (email: string) => void;
@@ -12,14 +12,12 @@ type FooterProps = {
 };
 
 export default function Footer({
-  onSubscribe,
-  brand = "#984DDD",
   brandSoft = "#D3E373",
   neutralPrimary = "#022850",
   neutralSecondary = "#6B6A70",
   divider = "#E7E6EA",
 }: FooterProps) {
-  const [email, setEmail] = useState("");
+
 
   return (
  <footer className="w-full bg-white flex items-center md:block min-h-screen md:min-h-0">
